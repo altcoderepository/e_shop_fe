@@ -1,0 +1,28 @@
+.header {
+  text-align: center;
+  height: 64px;
+  padding-inline: 48px;
+  line-height: 64px;
+  color: #fff;
+}
+
+.sider {
+  width: 20%;
+  text-align: center;
+  line-height: 120px;
+  color: #fff;
+}
+
+.footer {
+  text-align: center;
+  color: #fff;
+  background-color: #282828;  
+}
+
+.content {
+  text-align: center;
+  min-height: 120px;
+  padding: 48px;
+  height: 100%;
+  line-height: 120px;
+}
