@@ -5,6 +5,7 @@ import type { FC, ReactNode } from 'react';
 const { Header, Footer, Sider, Content } = Layout;
 
 import css from './styles.module.css';
+import { Cart } from '../Cart';
 
 type Props = {
   children: ReactNode;
@@ -13,7 +14,12 @@ type Props = {
 export const PageLayout: FC<Props> = ({ children }) => (
   <Flex gap="middle" wrap>
     <Layout>
-      <Header className={css.header}>Header</Header>
+      <Header className={css.header}>
+        <Flex justify="space-between">
+          <div>Logo</div>
+          <Cart />
+        </Flex>
+      </Header>
       <Layout>
         <Sider className={css.sider}>
           Sider

@@ -21,7 +21,7 @@
 
 .content {
   text-align: center;
-  min-height: 120px;
+  min-height: 100vh;
   padding: 48px;
   height: 100%;
   line-height: 120px;
