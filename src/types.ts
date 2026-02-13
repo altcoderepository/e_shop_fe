@@ -7,3 +7,7 @@ export type Product = {
   price: number;
   coverUrl?: string;
 }
+
+export type CartProduct = Product & {
+  count: number
+};
