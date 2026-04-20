@@ -12,7 +12,7 @@ import {
 import type { MenuProps, TableColumnsType, TableProps } from 'antd';
 import { Layout, Menu, Table } from 'antd';
 import type { Product } from '../../types';
-import { products } from '../../data';
+import { useQuery } from '@tanstack/react-query';
 
 const { Header, Content, Sider } = Layout;
 
@@ -56,8 +56,6 @@ const columns: TableColumnsType<Product> = [
   },
 ];
 
-const data: Product[] = products;
-
 const rowSelection: TableProps<Product>['rowSelection'] = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: Product[]) => {
     console.log(
@@ -69,6 +67,16 @@ const rowSelection: TableProps<Product>['rowSelection'] = {
 };
 
 export const Admin: React.FC = () => {
+  const { data } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const response = await fetch(
+        `${process.env.API_URL}:${process.env.API_PORT}/products`
+      );
+      return response.json();
+    },
+  });
+
   return (
     <Layout hasSider>
       <Sider style={siderStyle}>

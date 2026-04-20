@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "serve": "npx json-server db.json",
+    "start": "npm run serve & npm run dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.99.2",
     "antd": "^6.2.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -18,7 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.12.2",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.0",
@@ -29,6 +32,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
+    "json-server": "^1.0.0-beta.15",
     "lint-staged": "^16.4.0",
     "prettier": "3.8.3",
     "typescript": "~5.9.3",
