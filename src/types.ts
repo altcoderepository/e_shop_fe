@@ -1,4 +1,3 @@
-
 export type Product = {
   id: string;
   title: string;
@@ -6,8 +5,8 @@ export type Product = {
   genre: string;
   price: number;
   coverUrl?: string;
-}
+};
 
 export type CartProduct = Product & {
-  count: number
+  count: number;
 };

@@ -60,17 +60,25 @@ const data: Product[] = products;
 
 const rowSelection: TableProps<Product>['rowSelection'] = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: Product[]) => {
-    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+    console.log(
+      `selectedRowKeys: ${selectedRowKeys}`,
+      'selectedRows: ',
+      selectedRows
+    );
   },
 };
 
 export const Admin: React.FC = () => {
-
   return (
     <Layout hasSider>
       <Sider style={siderStyle}>
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+        <Menu
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={['4']}
+          items={items}
+        />
       </Sider>
       <Layout>
         <Header style={{ padding: 0 }} />

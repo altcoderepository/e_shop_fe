@@ -1,4 +1,3 @@
-
 import { Flex, Layout } from 'antd';
 import type { FC, ReactNode } from 'react';
 
@@ -21,9 +20,7 @@ export const PageLayout: FC<Props> = ({ children }) => (
         </Flex>
       </Header>
       <Layout>
-        <Sider className={css.sider}>
-          Sider
-        </Sider>
+        <Sider className={css.sider}>Sider</Sider>
         <Content className={css.content}>{children}</Content>
       </Layout>
       <Footer className={css.footer}>Footer</Footer>
