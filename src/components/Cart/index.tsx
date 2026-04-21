@@ -1,10 +1,11 @@
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Badge, Button, Drawer, Empty, Flex, Space, Typography } from 'antd';
 import { useState } from 'react';
 
-import css from './styles.module.css';
+import { ShoppingCartOutlined } from '@ant-design/icons';
+import { Badge, Button, Drawer, Empty, Flex, Space, Typography } from 'antd';
+
 import { useCartStore } from '../../store';
 import { CartItem } from '../CartItem';
+import css from './styles.module.css';
 
 export const Cart = () => {
   const [open, setOpen] = useState(false);

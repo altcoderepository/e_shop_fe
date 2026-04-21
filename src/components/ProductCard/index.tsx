@@ -1,12 +1,14 @@
-import { Button, Card, Col, Typography as T } from 'antd';
+import { type FC, memo } from 'react';
+
 import {
   HeartOutlined,
   ShareAltOutlined,
   ShoppingCartOutlined,
 } from '@ant-design/icons';
-import { memo, type FC } from 'react';
-import type { CartProduct, Product } from '../../types';
+import { Button, Card, Col, Typography as T } from 'antd';
+
 import { useCartStore } from '../../store';
+import type { CartProduct, Product } from '../../types';
 
 const { Meta } = Card;
 

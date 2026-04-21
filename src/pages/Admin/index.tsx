@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   AppstoreOutlined,
   BarChartOutlined,
@@ -9,11 +10,12 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
+import { useQuery } from '@tanstack/react-query';
 import type { MenuProps, TableColumnsType, TableProps } from 'antd';
 import { Layout, Menu, Table } from 'antd';
-import type { Product } from '../../types';
-import { useQuery } from '@tanstack/react-query';
+
 import { getProducts } from '../../api';
+import type { Product } from '../../types';
 
 const { Header, Content, Sider } = Layout;
 

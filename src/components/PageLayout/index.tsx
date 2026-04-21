@@ -1,10 +1,11 @@
-import { Flex, Layout } from 'antd';
 import type { FC, ReactNode } from 'react';
 
-const { Header, Footer, Sider, Content } = Layout;
+import { Flex, Layout } from 'antd';
 
-import css from './styles.module.css';
 import { Cart } from '../Cart';
+import css from './styles.module.css';
+
+const { Header, Footer, Sider, Content } = Layout;
 
 type Props = {
   children: ReactNode;

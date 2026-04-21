@@ -1,16 +1,17 @@
 import type { FC } from 'react';
-import type { CartProduct } from '../../types';
+
+import { DeleteOutlined } from '@ant-design/icons';
 import {
   Button,
   Flex,
   InputNumber,
-  Typography,
   type InputNumberProps,
+  Typography,
 } from 'antd';
-import { DeleteOutlined } from '@ant-design/icons';
 
-import css from './styles.module.css';
 import { useCartStore } from '../../store';
+import type { CartProduct } from '../../types';
+import css from './styles.module.css';
 
 type CartItemProps = CartProduct;
 

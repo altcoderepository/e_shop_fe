@@ -1,8 +1,9 @@
-import { Row } from 'antd';
-import { PageLayout, ProductCard } from '../../components';
 import { useQuery } from '@tanstack/react-query';
-import type { Product } from '../../types';
+import { Row } from 'antd';
+
 import { getProducts } from '../../api';
+import { PageLayout, ProductCard } from '../../components';
+import type { Product } from '../../types';
 
 export const Home = () => {
   const { data, isFetching, isError, isSuccess } = useQuery({
