@@ -2,26 +2,23 @@ import { Row } from 'antd';
 import { PageLayout, ProductCard } from '../../components';
 import { useQuery } from '@tanstack/react-query';
 import type { Product } from '../../types';
+import { getProducts } from '../../api';
 
 export const Home = () => {
-  // TODO Вынести в отдельный файл метод запроса
-  const { data } = useQuery({
+  const { data, isFetching, isError, isSuccess } = useQuery({
     queryKey: ['products'],
-    queryFn: async () => {
-      const response = await fetch(
-        `${process.env.API_URL}:${process.env.API_PORT}/products`
-      );
-      return response.json();
-    },
+    queryFn: getProducts,
   });
 
-  // Добавить обработку ошибок и загрузки
   return (
     <PageLayout>
       <Row gutter={[16, 16]}>
-        {data?.map((product: Product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        {isFetching && <div>Загрузка...</div>}
+        {isError && <div>Ошибка...</div>}
+        {isSuccess &&
+          data.map((product: Product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
       </Row>
     </PageLayout>
   );

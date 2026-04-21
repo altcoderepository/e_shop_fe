@@ -4,19 +4,17 @@ import {
   ShareAltOutlined,
   ShoppingCartOutlined,
 } from '@ant-design/icons';
-import { type FC } from 'react';
+import { memo, type FC } from 'react';
 import type { CartProduct, Product } from '../../types';
 import { useCartStore } from '../../store';
 
 const { Meta } = Card;
 
-// TODO подключить axios
-// TODO Создать запросы
 type ProductCardProps = {
   product: Product;
 };
 
-export const ProductCard: FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: FC<ProductCardProps> = memo(({ product }) => {
   const { add, products } = useCartStore();
 
   const description = (
@@ -66,4 +64,4 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
       </Card>
     </Col>
   );
-};
+});
