@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+
 import type { CartProduct } from './types';
 
 const initialState = { products: [] as CartProduct[] };

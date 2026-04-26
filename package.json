@@ -9,6 +9,7 @@
     "start": "npm run serve & npm run dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "lint:prettier:fix": "prettier . --write",
     "preview": "vite preview"
   },
   "dependencies": {

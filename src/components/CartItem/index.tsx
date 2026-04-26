@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import { DeleteOutlined } from '@ant-design/icons';
 import {
   Button,
@@ -9,8 +7,11 @@ import {
   Typography,
 } from 'antd';
 
+import type { FC } from 'react';
+
+import type { CartProduct } from '@/types';
+
 import { useCartStore } from '../../store';
-import type { CartProduct } from '../../types';
 import css from './styles.module.css';
 
 type CartItemProps = CartProduct;

@@ -1,6 +1,6 @@
-import type { FC, ReactNode } from 'react';
-
 import { Flex, Layout } from 'antd';
+
+import type { FC, ReactNode } from 'react';
 
 import { Cart } from '../Cart';
 import css from './styles.module.css';

@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router';
+
 import { Admin, Home } from './pages';
 
 export const router = createBrowserRouter([

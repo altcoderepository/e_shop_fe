@@ -3,7 +3,7 @@
   "tabWidth": 2,
   "singleQuote": true,
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
-  "importOrder": ["^react$", "^react-.*", "^@?[a-zA-Z].*", "^[./]"],
+  "importOrder": ["^react$", "^react-.*", "^@/[a-zA-Z].*", "^[./]"],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSortSpecifiers": false
 }
