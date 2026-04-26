@@ -29,20 +29,6 @@
       "artist": "artist",
       "genre": "rap",
       "price": "1234"
-    },
-    {
-      "id": "KOKgTzNkgu0",
-      "title": "title",
-      "artist": "artist",
-      "genre": "dsaccccc",
-      "price": "12"
-    },
-    {
-      "id": "-aY0KNp7SEk",
-      "title": "new",
-      "artist": "artist",
-      "genre": "rap",
-      "price": "34534567"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
