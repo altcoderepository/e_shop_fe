@@ -15,6 +15,35 @@
       "genre": "Hip-Hop",
       "price": 4500,
       "coverUrl": "https://avatars.mds.yandex.net/i?id=6e69ef095642953e2540475dce0e22cb6a7ae088-5910407-images-thumbs&n=13"
+    },
+    {
+      "id": "vOYqpVDZxRo",
+      "title": "sadasd",
+      "artist": "artist",
+      "genre": "rap",
+      "price": "4500"
+    },
+    {
+      "id": "yLDNHJFeYlg",
+      "title": "title",
+      "artist": "artist",
+      "genre": "rap",
+      "price": "1234"
+    },
+    {
+      "id": "KOKgTzNkgu0",
+      "title": "title",
+      "artist": "artist",
+      "genre": "dsaccccc",
+      "price": "12"
+    },
+    {
+      "id": "-aY0KNp7SEk",
+      "title": "new",
+      "artist": "artist",
+      "genre": "rap",
+      "price": "34534567"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

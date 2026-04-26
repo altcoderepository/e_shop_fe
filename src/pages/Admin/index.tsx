@@ -1,59 +1,28 @@
-import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
 import { useQuery } from '@tanstack/react-query';
-import type { MenuProps, TableColumnsType, TableProps } from 'antd';
-import { Layout, Menu, Table } from 'antd';
+import type { TableColumnsType, TableProps } from 'antd';
+import { Table } from 'antd';
 
 import React from 'react';
 
 import { getProducts } from '@/api';
+import { AdminLayout } from '@/components/AdminLayout';
 import type { Product } from '@/types';
 
-const { Header, Content, Sider } = Layout;
-
-const siderStyle: React.CSSProperties = {
-  overflow: 'auto',
-  height: '100vh',
-  position: 'sticky',
-  insetInlineStart: 0,
-  top: 0,
-  scrollbarWidth: 'thin',
-  scrollbarGutter: 'stable',
-};
-
-const items: MenuProps['items'] = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  TeamOutlined,
-  ShopOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
-}));
+import { ModalCreateProduct } from './components';
 
 const columns: TableColumnsType<Product> = [
   {
+    key: 'title',
     title: 'Название',
     dataIndex: 'title',
   },
   {
+    key: 'artist',
     title: 'Исполнитель',
     dataIndex: 'artist',
   },
   {
+    key: 'price',
     title: 'Цена',
     dataIndex: 'price',
   },
@@ -73,29 +42,20 @@ export const Admin: React.FC = () => {
   const { data } = useQuery({
     queryKey: ['products'],
     queryFn: getProducts,
+    select: (data) => data.map((item: Product) => ({ ...item, key: item.id })),
   });
 
   return (
-    <Layout hasSider>
-      <Sider style={siderStyle}>
-        <div className="demo-logo-vertical" />
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={['4']}
-          items={items}
+    <AdminLayout>
+      <>
+        <Table<Product>
+          rowSelection={{ type: 'checkbox', ...rowSelection }}
+          columns={columns}
+          dataSource={data}
+          pagination={false}
         />
-      </Sider>
-      <Layout>
-        <Header style={{ padding: 0 }} />
-        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-          <Table<Product>
-            rowSelection={{ type: 'checkbox', ...rowSelection }}
-            columns={columns}
-            dataSource={data}
-          />
-        </Content>
-      </Layout>
-    </Layout>
+        <ModalCreateProduct />
+      </>
+    </AdminLayout>
   );
 };
